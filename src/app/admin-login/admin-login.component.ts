@@ -6,5 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-login.component.css']
 })
 export class AdminLoginComponent {
-
+  username=""
+  password=""
+constructor(private router:Router){}
+  readValues=()=>
+  {
+    let data:any={"username":this.username,"password":this.password}
+    console.log(data)
+    if (this.username=="admin" && this.password=="12345") {
+      this.router.navigate(['/addemploy'])
+    } else {
+      alert("invalid credentials")
+    }
+  }
 }
